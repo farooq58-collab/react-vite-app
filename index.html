@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      // Mock IntersectionObserver when running inside an iframe to trigger scroll reveal animations correctly
+      if (window.self !== window.top) {
+        document.documentElement.classList.add('is-embedded');
+
+        // Store all active observer instances and their observed elements
+        const activeObservers = new Set();
+        let lastIframeTop = 0;
+        let lastParentHeight = window.innerHeight;
+
+        window.IntersectionObserver = class IntersectionObserver {
+          constructor(callback, options) {
+            this.callback = callback;
+            this.options = options;
+            this.elements = new Map(); // Map element to its intersection state
+            activeObservers.add(this);
+          }
+
+          observe(element) {
+            this.elements.set(element, null); // null means unknown initial state
+            this.checkElement(element);
+          }
+
+          unobserve(element) {
+            this.elements.delete(element);
+          }
+
+          disconnect() {
+            this.elements.clear();
+            activeObservers.delete(this);
+          }
+
+          checkElement(element) {
+            try {
+              const rect = element.getBoundingClientRect();
+              
+              // Calculate positions relative to the parent viewport
+              const elementTopInParent = rect.top + lastIframeTop;
+              const elementBottomInParent = rect.bottom + lastIframeTop;
+              
+              // The element intersects the parent viewport if its bottom is in view
+              const isIntersecting = elementBottomInParent >= -10 && elementTopInParent <= (lastParentHeight + 10);
+              const prevState = this.elements.get(element);
+
+              if (prevState !== isIntersecting) {
+                this.elements.set(element, isIntersecting);
+                
+                this.callback([
+                  {
+                    target: element,
+                    isIntersecting: isIntersecting,
+                    intersectionRatio: isIntersecting ? 1 : 0,
+                    boundingClientRect: rect,
+                    intersectionRect: rect,
+                    rootBounds: {}
+                  }
+                ], this);
+              }
+            } catch (e) {
+              // Fail-safe fallback to true
+              this.callback([
+                {
+                  target: element,
+                  isIntersecting: true,
+                  intersectionRatio: 1,
+                  boundingClientRect: {},
+                  intersectionRect: {},
+                  rootBounds: {}
+                }
+              ], this);
+            }
+          }
+
+          checkAll() {
+            this.elements.forEach((state, element) => this.checkElement(element));
+          }
+        };
+
+        // Listen for viewport scroll message from parent window
+        window.addEventListener('message', function(event) {
+          if (event.data && event.data.type === 'parent-viewport') {
+            lastIframeTop = typeof event.data.iframeTop === 'number' ? event.data.iframeTop : lastIframeTop;
+            lastParentHeight = typeof event.data.parentInnerHeight === 'number' ? event.data.parentInnerHeight : lastParentHeight;
+            
+            // Update all active observers
+            activeObservers.forEach(function(observer) {
+              observer.checkAll();
+            });
+          }
+        });
+      }
+    </script>
+    <style>
+      /* Prevent infinite iframe height resizing loop by overriding vh-based heights inside an iframe */
+      html.is-embedded, 
+      html.is-embedded body,
+      html.is-embedded #root {
+        min-height: 0 !important;
+        height: auto !important;
+      }
+      html.is-embedded .min-h-screen,
+      html.is-embedded [class*="min-h-screen"],
+      html.is-embedded [class*="min-h-[calc(100vh"] {
+        min-height: 0 !important;
+        min-height: fit-content !important;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>IELTS Mindful</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Send height updates to parent window safely
+      (function() {
+        var lastHeight = 0;
+        function sendHeight() {
+          try {
+            var body = document.body;
+            var docEl = document.documentElement;
+            // Get the maximum of various height properties for maximum cross-browser accuracy
+            var height = Math.max(
+              body ? body.scrollHeight : 0,
+              body ? body.offsetHeight : 0,
+              docEl ? docEl.clientHeight : 0,
+              docEl ? docEl.scrollHeight : 0,
+              docEl ? docEl.offsetHeight : 0
+            );
+            
+            // Only send if height has actually changed (prevents infinite resize loops)
+            if (height && height !== lastHeight && height > 100) {
+              lastHeight = height;
+              if (window.parent && window.parent.postMessage) {
+                window.parent.postMessage({
+                  type: 'resize-iframe',
+                  height: height
+                }, '*');
+              }
+            }
+          } catch(e) {
+            console.error("Iframe height calc error:", e);
+          }
+        }
+        
+        function init() {
+          sendHeight();
+          window.addEventListener('resize', sendHeight);
+          
+          if (window.ResizeObserver && document.body) {
+            try {
+              var observer = new ResizeObserver(function() {
+                sendHeight();
+              });
+              observer.observe(document.body);
+            } catch (e) {
+              setInterval(sendHeight, 1000);
+            }
+          } else {
+            setInterval(sendHeight, 1000);
+          }
+        }
+
+        // Wait for DOM to be ready to ensure document.body exists
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+        } else {
+          init();
+        }
+        window.addEventListener('load', sendHeight);
+      })();
+    </script>
+  </body>
+</html>

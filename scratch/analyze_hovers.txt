@@ -1,0 +1,1352 @@
+=== Line 405 ===
+   400:           <button
+   401:             onClick={() => {
+   402:               const nextIdx = (activeIndex - 1 + totalSlides) % totalSlides;
+   403:               scrollToIndex(nextIdx);
+   404:             }}
+=> 405:             className="w-10 h-10 rounded-full border border-gray-200 bg-white text-[#002966] hover:bg-gray-50 active:bg-gray-100 hover:text-[#9c080a] active:text-[#9c080a] transition-all flex items-center justify-center shadow-xs cursor-pointer focus:outline-hidden"
+   406:             aria-label="Previous slide"
+   407:           >
+   408:             <svg className="w-5 h-5 stroke-current fill-none" viewBox="0 0 24 24" strokeWidth="2.5">
+   409:               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+   410:             </svg>
+
+=== Line 422 ===
+   417:                 key={idx}
+   418:                 onClick={() => scrollToIndex(idx)}
+   419:                 className={`h-2 rounded-full transition-all duration-300 shrink-0 cursor-pointer ${
+   420:                   activeIndex === idx 
+   421:                     ? 'w-6 bg-[#9c080a] shadow-xs' 
+=> 422:                     : 'w-2 bg-gray-300 hover:bg-gray-400'
+   423:                 }`}
+   424:                 aria-label={`Go to slide ${idx + 1}`}
+   425:               />
+   426:             ))}
+   427:           </div>
+
+=== Line 435 ===
+   430:           <button
+   431:             onClick={() => {
+   432:               const nextIdx = (activeIndex + 1) % totalSlides;
+   433:               scrollToIndex(nextIdx);
+   434:             }}
+=> 435:             className="w-10 h-10 rounded-full border border-gray-200 bg-white text-[#002966] hover:bg-gray-50 active:bg-gray-100 hover:text-[#9c080a] active:text-[#9c080a] transition-all flex items-center justify-center shadow-xs cursor-pointer focus:outline-hidden"
+   436:             aria-label="Next slide"
+   437:           >
+   438:             <svg className="w-5 h-5 stroke-current fill-none" viewBox="0 0 24 24" strokeWidth="2.5">
+   439:               <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+   440:             </svg>
+
+=== Line 456 ===
+   451:   const [isSliderPaused, setIsSliderPaused] = React.useState(false);
+   452:   const [captainTab, setCaptainTab] = React.useState('profile');
+   453:   const [isVideoModalOpen, setIsVideoModalOpen] = React.useState(false);
+   454:   const [isStickyVisible, setIsStickyVisible] = React.useState(false);
+   455:   const [activePhotoIndex, setActivePhotoIndex] = React.useState(null);
+=> 456:   const [showHeroOverlay, setShowHeroOverlay] = React.useState(false);
+   457:   const heroRef = React.useRef(null);
+   458:   const footerRef = React.useRef(null);
+   459: 
+   460:   React.useEffect(() => {
+   461:     const handleScroll = () => {
+
+=== Line 511 ===
+   506:             </a>
+   507:           </div>
+   508: 
+   509:           {/* Desktop Nav (Center) */}
+   510:           <nav className="hidden lg:flex flex-1 justify-center items-center gap-4 xl:gap-8 text-white font-semibold text-[13px] xl:text-[15px]">
+=> 511:             <a href="#" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Home</a>
+   512:             <a href="#stats" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Stats</a>
+   513:             <a href="#myths" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Myths</a>
+   514:             <a href="#how-it-works" className="text-white hover:text-brand-red active:text-brand-red transition-colors">How It Works</a>
+   515:             <a href="#eligibility" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Eligibility</a>
+   516:             <a href="#gallery" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Gallery</a>
+
+=== Line 512 ===
+   507:           </div>
+   508: 
+   509:           {/* Desktop Nav (Center) */}
+   510:           <nav className="hidden lg:flex flex-1 justify-center items-center gap-4 xl:gap-8 text-white font-semibold text-[13px] xl:text-[15px]">
+   511:             <a href="#" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Home</a>
+=> 512:             <a href="#stats" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Stats</a>
+   513:             <a href="#myths" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Myths</a>
+   514:             <a href="#how-it-works" className="text-white hover:text-brand-red active:text-brand-red transition-colors">How It Works</a>
+   515:             <a href="#eligibility" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Eligibility</a>
+   516:             <a href="#gallery" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Gallery</a>
+   517:             <a href="#testimonials" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Testimonials</a>
+
+=== Line 513 ===
+   508: 
+   509:           {/* Desktop Nav (Center) */}
+   510:           <nav className="hidden lg:flex flex-1 justify-center items-center gap-4 xl:gap-8 text-white font-semibold text-[13px] xl:text-[15px]">
+   511:             <a href="#" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Home</a>
+   512:             <a href="#stats" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Stats</a>
+=> 513:             <a href="#myths" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Myths</a>
+   514:             <a href="#how-it-works" className="text-white hover:text-brand-red active:text-brand-red transition-colors">How It Works</a>
+   515:             <a href="#eligibility" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Eligibility</a>
+   516:             <a href="#gallery" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Gallery</a>
+   517:             <a href="#testimonials" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Testimonials</a>
+   518:             <a href="#preparation" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Pricing</a>
+
+=== Line 514 ===
+   509:           {/* Desktop Nav (Center) */}
+   510:           <nav className="hidden lg:flex flex-1 justify-center items-center gap-4 xl:gap-8 text-white font-semibold text-[13px] xl:text-[15px]">
+   511:             <a href="#" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Home</a>
+   512:             <a href="#stats" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Stats</a>
+   513:             <a href="#myths" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Myths</a>
+=> 514:             <a href="#how-it-works" className="text-white hover:text-brand-red active:text-brand-red transition-colors">How It Works</a>
+   515:             <a href="#eligibility" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Eligibility</a>
+   516:             <a href="#gallery" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Gallery</a>
+   517:             <a href="#testimonials" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Testimonials</a>
+   518:             <a href="#preparation" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Pricing</a>
+   519:             <a href="#apply" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Contact</a>
+
+=== Line 515 ===
+   510:           <nav className="hidden lg:flex flex-1 justify-center items-center gap-4 xl:gap-8 text-white font-semibold text-[13px] xl:text-[15px]">
+   511:             <a href="#" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Home</a>
+   512:             <a href="#stats" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Stats</a>
+   513:             <a href="#myths" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Myths</a>
+   514:             <a href="#how-it-works" className="text-white hover:text-brand-red active:text-brand-red transition-colors">How It Works</a>
+=> 515:             <a href="#eligibility" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Eligibility</a>
+   516:             <a href="#gallery" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Gallery</a>
+   517:             <a href="#testimonials" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Testimonials</a>
+   518:             <a href="#preparation" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Pricing</a>
+   519:             <a href="#apply" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Contact</a>
+   520:           </nav>
+
+=== Line 516 ===
+   511:             <a href="#" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Home</a>
+   512:             <a href="#stats" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Stats</a>
+   513:             <a href="#myths" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Myths</a>
+   514:             <a href="#how-it-works" className="text-white hover:text-brand-red active:text-brand-red transition-colors">How It Works</a>
+   515:             <a href="#eligibility" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Eligibility</a>
+=> 516:             <a href="#gallery" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Gallery</a>
+   517:             <a href="#testimonials" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Testimonials</a>
+   518:             <a href="#preparation" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Pricing</a>
+   519:             <a href="#apply" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Contact</a>
+   520:           </nav>
+   521: 
+
+=== Line 517 ===
+   512:             <a href="#stats" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Stats</a>
+   513:             <a href="#myths" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Myths</a>
+   514:             <a href="#how-it-works" className="text-white hover:text-brand-red active:text-brand-red transition-colors">How It Works</a>
+   515:             <a href="#eligibility" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Eligibility</a>
+   516:             <a href="#gallery" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Gallery</a>
+=> 517:             <a href="#testimonials" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Testimonials</a>
+   518:             <a href="#preparation" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Pricing</a>
+   519:             <a href="#apply" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Contact</a>
+   520:           </nav>
+   521: 
+   522:           {/* CTA & Mobile Toggle (Right) */}
+
+=== Line 518 ===
+   513:             <a href="#myths" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Myths</a>
+   514:             <a href="#how-it-works" className="text-white hover:text-brand-red active:text-brand-red transition-colors">How It Works</a>
+   515:             <a href="#eligibility" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Eligibility</a>
+   516:             <a href="#gallery" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Gallery</a>
+   517:             <a href="#testimonials" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Testimonials</a>
+=> 518:             <a href="#preparation" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Pricing</a>
+   519:             <a href="#apply" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Contact</a>
+   520:           </nav>
+   521: 
+   522:           {/* CTA & Mobile Toggle (Right) */}
+   523:           <div className="flex-none lg:w-[220px] xl:w-[280px] flex justify-end items-center shrink-0">
+
+=== Line 519 ===
+   514:             <a href="#how-it-works" className="text-white hover:text-brand-red active:text-brand-red transition-colors">How It Works</a>
+   515:             <a href="#eligibility" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Eligibility</a>
+   516:             <a href="#gallery" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Gallery</a>
+   517:             <a href="#testimonials" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Testimonials</a>
+   518:             <a href="#preparation" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Pricing</a>
+=> 519:             <a href="#apply" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Contact</a>
+   520:           </nav>
+   521: 
+   522:           {/* CTA & Mobile Toggle (Right) */}
+   523:           <div className="flex-none lg:w-[220px] xl:w-[280px] flex justify-end items-center shrink-0">
+   524:             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="hidden lg:flex bg-brand-red text-white px-6 py-2.5 xl:py-3 rounded-md font-bold text-sm xl:text-base hover:bg-red-800 active:bg-red-800 transition-all hover:-translate-y-0.5 active:-translate-y-0.5 shadow-md items-center justify-center">
+
+=== Line 524 ===
+   519:             <a href="#apply" className="text-white hover:text-brand-red active:text-brand-red transition-colors">Contact</a>
+   520:           </nav>
+   521: 
+   522:           {/* CTA & Mobile Toggle (Right) */}
+   523:           <div className="flex-none lg:w-[220px] xl:w-[280px] flex justify-end items-center shrink-0">
+=> 524:             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="hidden lg:flex bg-brand-red text-white px-6 py-2.5 xl:py-3 rounded-md font-bold text-sm xl:text-base hover:bg-red-800 active:bg-red-800 transition-all hover:-translate-y-0.5 active:-translate-y-0.5 shadow-md items-center justify-center">
+   525:               Get Started
+   526:             </a>
+   527:             
+   528:             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden text-white p-2 ml-4">
+   529:               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+=== Line 545 ===
+   540:       </header>
+   541: 
+   542:       {/* Mobile Nav Dropdown */}
+   543:       {isMobileMenuOpen && (
+   544:         <div className="lg:hidden bg-brand-blue shadow-md border-t border-blue-900 flex flex-col items-center py-6 gap-6 text-white font-semibold sticky top-[72px] z-40">
+=> 545:           <a href="#" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Home</a>
+   546:           <a href="#stats" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Stats</a>
+   547:           <a href="#myths" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Myths</a>
+   548:           <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">How It Works</a>
+   549:           <a href="#eligibility" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Eligibility</a>
+   550:           <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Gallery</a>
+
+=== Line 546 ===
+   541: 
+   542:       {/* Mobile Nav Dropdown */}
+   543:       {isMobileMenuOpen && (
+   544:         <div className="lg:hidden bg-brand-blue shadow-md border-t border-blue-900 flex flex-col items-center py-6 gap-6 text-white font-semibold sticky top-[72px] z-40">
+   545:           <a href="#" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Home</a>
+=> 546:           <a href="#stats" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Stats</a>
+   547:           <a href="#myths" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Myths</a>
+   548:           <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">How It Works</a>
+   549:           <a href="#eligibility" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Eligibility</a>
+   550:           <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Gallery</a>
+   551:           <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Testimonials</a>
+
+=== Line 547 ===
+   542:       {/* Mobile Nav Dropdown */}
+   543:       {isMobileMenuOpen && (
+   544:         <div className="lg:hidden bg-brand-blue shadow-md border-t border-blue-900 flex flex-col items-center py-6 gap-6 text-white font-semibold sticky top-[72px] z-40">
+   545:           <a href="#" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Home</a>
+   546:           <a href="#stats" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Stats</a>
+=> 547:           <a href="#myths" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Myths</a>
+   548:           <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">How It Works</a>
+   549:           <a href="#eligibility" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Eligibility</a>
+   550:           <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Gallery</a>
+   551:           <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Testimonials</a>
+   552:           <a href="#preparation" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Pricing</a>
+
+=== Line 548 ===
+   543:       {isMobileMenuOpen && (
+   544:         <div className="lg:hidden bg-brand-blue shadow-md border-t border-blue-900 flex flex-col items-center py-6 gap-6 text-white font-semibold sticky top-[72px] z-40">
+   545:           <a href="#" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Home</a>
+   546:           <a href="#stats" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Stats</a>
+   547:           <a href="#myths" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Myths</a>
+=> 548:           <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">How It Works</a>
+   549:           <a href="#eligibility" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Eligibility</a>
+   550:           <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Gallery</a>
+   551:           <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Testimonials</a>
+   552:           <a href="#preparation" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Pricing</a>
+   553:           <a href="#apply" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Contact</a>
+
+=== Line 549 ===
+   544:         <div className="lg:hidden bg-brand-blue shadow-md border-t border-blue-900 flex flex-col items-center py-6 gap-6 text-white font-semibold sticky top-[72px] z-40">
+   545:           <a href="#" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Home</a>
+   546:           <a href="#stats" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Stats</a>
+   547:           <a href="#myths" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Myths</a>
+   548:           <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">How It Works</a>
+=> 549:           <a href="#eligibility" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Eligibility</a>
+   550:           <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Gallery</a>
+   551:           <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Testimonials</a>
+   552:           <a href="#preparation" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Pricing</a>
+   553:           <a href="#apply" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Contact</a>
+   554:           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="bg-brand-red text-white px-8 py-3 rounded-md font-bold text-sm hover:bg-red-800 active:bg-red-800 transition-colors shadow-md mt-2">
+
+=== Line 550 ===
+   545:           <a href="#" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Home</a>
+   546:           <a href="#stats" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Stats</a>
+   547:           <a href="#myths" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Myths</a>
+   548:           <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">How It Works</a>
+   549:           <a href="#eligibility" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Eligibility</a>
+=> 550:           <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Gallery</a>
+   551:           <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Testimonials</a>
+   552:           <a href="#preparation" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Pricing</a>
+   553:           <a href="#apply" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Contact</a>
+   554:           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="bg-brand-red text-white px-8 py-3 rounded-md font-bold text-sm hover:bg-red-800 active:bg-red-800 transition-colors shadow-md mt-2">
+   555:             Get Started
+
+=== Line 551 ===
+   546:           <a href="#stats" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Stats</a>
+   547:           <a href="#myths" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Myths</a>
+   548:           <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">How It Works</a>
+   549:           <a href="#eligibility" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Eligibility</a>
+   550:           <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Gallery</a>
+=> 551:           <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Testimonials</a>
+   552:           <a href="#preparation" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Pricing</a>
+   553:           <a href="#apply" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Contact</a>
+   554:           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="bg-brand-red text-white px-8 py-3 rounded-md font-bold text-sm hover:bg-red-800 active:bg-red-800 transition-colors shadow-md mt-2">
+   555:             Get Started
+   556:           </a>
+
+=== Line 552 ===
+   547:           <a href="#myths" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Myths</a>
+   548:           <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">How It Works</a>
+   549:           <a href="#eligibility" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Eligibility</a>
+   550:           <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Gallery</a>
+   551:           <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Testimonials</a>
+=> 552:           <a href="#preparation" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Pricing</a>
+   553:           <a href="#apply" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Contact</a>
+   554:           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="bg-brand-red text-white px-8 py-3 rounded-md font-bold text-sm hover:bg-red-800 active:bg-red-800 transition-colors shadow-md mt-2">
+   555:             Get Started
+   556:           </a>
+   557:         </div>
+
+=== Line 553 ===
+   548:           <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">How It Works</a>
+   549:           <a href="#eligibility" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Eligibility</a>
+   550:           <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Gallery</a>
+   551:           <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Testimonials</a>
+   552:           <a href="#preparation" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Pricing</a>
+=> 553:           <a href="#apply" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Contact</a>
+   554:           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="bg-brand-red text-white px-8 py-3 rounded-md font-bold text-sm hover:bg-red-800 active:bg-red-800 transition-colors shadow-md mt-2">
+   555:             Get Started
+   556:           </a>
+   557:         </div>
+   558:       )}
+
+=== Line 554 ===
+   549:           <a href="#eligibility" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Eligibility</a>
+   550:           <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Gallery</a>
+   551:           <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Testimonials</a>
+   552:           <a href="#preparation" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Pricing</a>
+   553:           <a href="#apply" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-brand-red active:text-brand-red">Contact</a>
+=> 554:           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="bg-brand-red text-white px-8 py-3 rounded-md font-bold text-sm hover:bg-red-800 active:bg-red-800 transition-colors shadow-md mt-2">
+   555:             Get Started
+   556:           </a>
+   557:         </div>
+   558:       )}
+   559: 
+
+=== Line 584 ===
+   579:               className="w-full h-auto block"
+   580:             />
+   581: 
+   582:             {/* Hover Overlay Container */}
+   583:             <div className={`absolute inset-0 flex flex-col justify-center items-center transition-opacity duration-500 pointer-events-auto ${
+=> 584:               showHeroOverlay 
+   585:                 ? 'opacity-100' 
+   586:                 : 'opacity-0 lg:opacity-0 lg:group-hover:opacity-100'
+   587:             }`}>
+   588:               {/* Gradient Overlay to match branding */}
+   589:               <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/95 via-brand-blue/80 to-brand-red/90 mix-blend-multiply opacity-90"></div>
+
+=== Line 586 ===
+   581: 
+   582:             {/* Hover Overlay Container */}
+   583:             <div className={`absolute inset-0 flex flex-col justify-center items-center transition-opacity duration-500 pointer-events-auto ${
+   584:               showHeroOverlay 
+   585:                 ? 'opacity-100' 
+=> 586:                 : 'opacity-0 lg:opacity-0 lg:group-hover:opacity-100'
+   587:             }`}>
+   588:               {/* Gradient Overlay to match branding */}
+   589:               <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue/95 via-brand-blue/80 to-brand-red/90 mix-blend-multiply opacity-90"></div>
+   590: 
+   591:               {/* Content */}
+
+=== Line 606 ===
+   601:                 <div 
+   602:                   onClick={(e) => {
+   603:                     e.stopPropagation();
+   604:                     setIsVideoModalOpen(true);
+   605:                   }}
+=> 606:                   className="relative mb-3 sm:mb-8 md:mb-10 cursor-pointer hover:scale-105 active:scale-95 transition-transform duration-300"
+   607:                 >
+   608:                   <div className="absolute inset-0 bg-brand-red rounded-full animate-ping opacity-60"></div>
+   609:                   <button className="relative bg-[#9c080a] text-white w-10 h-10 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(156,8,10,0.7)]">
+   610:                     <svg className="w-4 h-4 sm:w-10 sm:h-10 md:w-12 md:h-12 ml-1" fill="currentColor" viewBox="0 0 24 24">
+   611:                       <path d="M8 5v14l11-7z" />
+
+=== Line 617 ===
+   612:                     </svg>
+   613:                   </button>
+   614:                 </div>
+   615: 
+   616:                 {/* Badge */}
+=> 617:                 <div className="bg-[#8b0000] border border-[#b22222] sm:border-2 text-white px-2 sm:px-6 md:px-8 py-0.5 sm:py-2 md:py-3 rounded-full font-bold text-[8px] sm:text-sm md:text-lg shadow-xl shadow-brand-red/30 cursor-pointer hover:bg-brand-red active:bg-brand-red transition-colors">
+   618:                   (100% Protected with Money back Guaranteed)
+   619:                 </div>
+   620:               </div>
+   621: 
+   622:               {/* Fake Video Controls (Bottom) */}
+
+=== Line 627 ===
+   622:               {/* Fake Video Controls (Bottom) */}
+   623:               <div className="absolute bottom-2 sm:bottom-4 left-0 right-0 px-2 sm:px-8 flex items-center justify-between z-10 hidden sm:flex">
+   624:                 <div className="text-white text-xs sm:text-sm font-medium">5:43 PM | hsy-diug-eaj</div>
+   625:                 <div className="flex gap-1 sm:gap-3">
+   626:                   {[...Array(6)].map((_, i) => (
+=> 627:                     <div key={i} className="w-6 h-6 sm:w-10 sm:h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center cursor-pointer hover:bg-white/20 active:bg-white/20 transition-colors">
+   628:                       <div className="w-2 h-2 sm:w-4 sm:h-4 bg-white/60 rounded-sm"></div>
+   629:                     </div>
+   630:                   ))}
+   631:                   <div className="w-8 h-6 sm:w-14 sm:h-10 rounded-full bg-brand-red flex items-center justify-center ml-1 sm:ml-2 cursor-pointer hover:bg-red-700 active:bg-red-700 transition-colors">
+   632:                     <div className="w-3 sm:w-5 h-1 sm:h-1.5 bg-white rounded-full"></div>
+
+=== Line 631 ===
+   626:                   {[...Array(6)].map((_, i) => (
+   627:                     <div key={i} className="w-6 h-6 sm:w-10 sm:h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center cursor-pointer hover:bg-white/20 active:bg-white/20 transition-colors">
+   628:                       <div className="w-2 h-2 sm:w-4 sm:h-4 bg-white/60 rounded-sm"></div>
+   629:                     </div>
+   630:                   ))}
+=> 631:                   <div className="w-8 h-6 sm:w-14 sm:h-10 rounded-full bg-brand-red flex items-center justify-center ml-1 sm:ml-2 cursor-pointer hover:bg-red-700 active:bg-red-700 transition-colors">
+   632:                     <div className="w-3 sm:w-5 h-1 sm:h-1.5 bg-white rounded-full"></div>
+   633:                   </div>
+   634:                 </div>
+   635:               </div>
+   636:             </div>
+
+=== Line 726 ===
+   721:                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+   722:                         </svg>
+   723:                       )
+   724:                     }
+   725:                   ].map((item) => (
+=> 726:                     <div key={item.num} className="flex gap-4 p-5 md:p-6 border-b border-gray-100 last:border-0 hover:bg-gray-50 active:bg-gray-50 transition-colors">
+   727:                       <div className="text-gray-200 font-extrabold text-2xl md:text-3xl shrink-0 w-8">{item.num}</div>
+   728:                       <div className="bg-blue-50/50 p-2 md:p-2.5 rounded-xl h-fit shrink-0 text-[#002966]">
+   729:                         {item.icon}
+   730:                       </div>
+   731:                       <div>
+
+=== Line 769 ===
+   764:                     { tag: "CAREER", desc: "Another admission deferred" },
+   765:                     { tag: "VISA", desc: "Another visa appointment you can't book" },
+   766:                     { tag: "MENTAL", desc: "Another hit to your confidence and self-worth" },
+   767:                     { tag: "FAMILY", desc: "Another round of explaining to the family why you're still stuck" }
+   768:                   ].map((item) => (
+=> 769:                     <div key={item.tag} className="flex items-center gap-3 md:gap-4 p-4 md:p-6 border-b border-gray-100 last:border-0 hover:bg-gray-50 active:bg-gray-50 transition-colors">
+   770:                       <div className="bg-[#9c080a]/10 text-[#9c080a] px-2 md:px-3 py-1.5 rounded-md text-[10px] md:text-xs font-bold tracking-widest w-16 md:w-20 text-center shrink-0 border border-[#9c080a]/20">
+   771:                         {item.tag}
+   772:                       </div>
+   773:                       <div className="font-bold text-gray-800 text-xs md:text-sm flex-1">
+   774:                         {item.desc}
+
+=== Line 817 ===
+   812:               viewport={{ once: true, amount: 0.1 }}
+   813:             >
+   814:               {/* Stats Grid */}
+   815:               <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 bg-white rounded-2xl md:rounded-[2rem] shadow-xl overflow-hidden border border-gray-100 mb-8 md:mb-10">
+   816:               {/* Item 1 */}
+=> 817:               <div className="p-8 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-gray-100 hover:bg-gray-50 active:bg-gray-50 transition-colors">
+   818:                 <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+   819:                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+   820:                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+   821:                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 14v6"></path>
+   822:                 </svg>
+
+=== Line 830 ===
+   825:                 </div>
+   826:                 <p className="text-sm text-gray-500 font-medium px-2">Students trained and counting</p>
+   827:               </div>
+   828: 
+   829:               {/* Item 2 */}
+=> 830:               <div className="p-8 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-gray-100 hover:bg-gray-50 active:bg-gray-50 transition-colors">
+   831:                 <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+   832:                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+   833:                 </svg>
+   834:                 <div className="text-4xl md:text-5xl font-extrabold text-[#002966] mt-5 mb-2 flex items-center">
+   835:                   <CountUp end={1.5} decimals={1} duration={2000} /> <span className="text-[#9c080a] font-bold text-lg md:text-xl ml-2">Bands</span>
+
+=== Line 841 ===
+   836:                 </div>
+   837:                 <p className="text-sm text-gray-500 font-medium px-2">Average band score improvement per student</p>
+   838:               </div>
+   839: 
+   840:               {/* Item 3 */}
+=> 841:               <div className="p-8 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-gray-100 hover:bg-gray-50 active:bg-gray-50 transition-colors">
+   842:                 <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+   843:                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+   844:                 </svg>
+   845:                 <div className="text-4xl md:text-5xl font-extrabold text-[#002966] mt-5 mb-2 flex items-baseline">
+   846:                   <CountUp end={4.9} decimals={1} duration={2000} /><span className="text-[#9c080a] font-bold text-2xl md:text-3xl">/5</span>
+
+=== Line 852 ===
+   847:                 </div>
+   848:                 <p className="text-sm text-gray-500 font-medium px-2">Google Rating from verified students</p>
+   849:               </div>
+   850: 
+   851:               {/* Item 4 */}
+=> 852:               <div className="p-8 flex flex-col items-center text-center hover:bg-gray-50 active:bg-gray-50 transition-colors">
+   853:                 <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+   854:                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+   855:                 </svg>
+   856:                 <div className="text-4xl md:text-5xl font-extrabold text-[#002966] mt-5 mb-2 flex items-center">
+   857:                   <CountUp end={10} duration={2000} /><span className="text-[#9c080a] font-bold text-2xl md:text-3xl ml-1">+ <span className="text-xl">Yrs</span></span>
+
+=== Line 876 ===
+   871:                   <div>
+   872:                     <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-2">Immeasurable</h3>
+   873:                     <p className="text-blue-100 text-sm md:text-base font-medium">Stress avoided — because the right preparation means you only do this once.</p>
+   874:                   </div>
+   875:                 </div>
+=> 876:                 <button className="px-8 py-3 rounded-xl bg-white text-[#002966] font-bold tracking-widest text-sm uppercase hover:bg-blue-50 active:bg-blue-50 hover:scale-105 active:scale-95 transition-all duration-300 shrink-0 shadow-md">
+   877:                   PRICELESS
+   878:                 </button>
+   879:               </motion.div>
+   880:             </motion.div>
+   881:           </div>
+
+=== Line 916 ===
+   911:               <div className="absolute left-0 top-0 bottom-0 w-8 md:w-48 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
+   912:               <div className="absolute right-0 top-0 bottom-0 w-8 md:w-48 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
+   913: 
+   914:               <div
+   915:                 onClick={() => setIsSliderPaused(p => !p)}
+=> 916:                 className={`flex w-max animate-scroll md:group-hover/slider:[animation-play-state:paused] cursor-pointer ${isSliderPaused ? '[animation-play-state:paused!important]' : '[animation-play-state:running!important]'}`}
+   917:               >
+   918:                 {/* Original Set */}
+   919:                 <div className="flex gap-6 md:gap-8 px-3 md:px-4 w-max">
+   920:                   {mythsData.map((myth, index) => (
+   921:                     <div key={`orig-${index}`} className="w-[85vw] sm:w-[350px] md:w-[400px] h-full bg-white p-8 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col hover:-translate-y-2 active:-translate-y-2 transition-transform duration-300 group shrink-0">
+
+=== Line 921 ===
+   916:                 className={`flex w-max animate-scroll md:group-hover/slider:[animation-play-state:paused] cursor-pointer ${isSliderPaused ? '[animation-play-state:paused!important]' : '[animation-play-state:running!important]'}`}
+   917:               >
+   918:                 {/* Original Set */}
+   919:                 <div className="flex gap-6 md:gap-8 px-3 md:px-4 w-max">
+   920:                   {mythsData.map((myth, index) => (
+=> 921:                     <div key={`orig-${index}`} className="w-[85vw] sm:w-[350px] md:w-[400px] h-full bg-white p-8 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col hover:-translate-y-2 active:-translate-y-2 transition-transform duration-300 group shrink-0">
+   922:                       <div className="text-gray-200 font-extrabold text-5xl mb-4 group-hover:text-[#9c080a]/20 group-active:text-[#9c080a]/20 transition-colors">{myth.num}</div>
+   923:                       <h4 className="text-xl font-bold text-[#9c080a] mb-4 italic leading-snug min-h-[3.5rem] sm:min-h-[4rem] flex items-start">"{myth.title}"</h4>
+   924:                       <div className="w-12 h-1 bg-gray-100 mb-4 group-hover:bg-[#002966] group-active:bg-[#002966] transition-colors shrink-0"></div>
+   925:                       <div className="flex-1 flex flex-col justify-start">
+   926:                         <h5 className="text-[#002966] font-bold text-sm uppercase tracking-widest mb-2">Reality</h5>
+
+=== Line 922 ===
+   917:               >
+   918:                 {/* Original Set */}
+   919:                 <div className="flex gap-6 md:gap-8 px-3 md:px-4 w-max">
+   920:                   {mythsData.map((myth, index) => (
+   921:                     <div key={`orig-${index}`} className="w-[85vw] sm:w-[350px] md:w-[400px] h-full bg-white p-8 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col hover:-translate-y-2 active:-translate-y-2 transition-transform duration-300 group shrink-0">
+=> 922:                       <div className="text-gray-200 font-extrabold text-5xl mb-4 group-hover:text-[#9c080a]/20 group-active:text-[#9c080a]/20 transition-colors">{myth.num}</div>
+   923:                       <h4 className="text-xl font-bold text-[#9c080a] mb-4 italic leading-snug min-h-[3.5rem] sm:min-h-[4rem] flex items-start">"{myth.title}"</h4>
+   924:                       <div className="w-12 h-1 bg-gray-100 mb-4 group-hover:bg-[#002966] group-active:bg-[#002966] transition-colors shrink-0"></div>
+   925:                       <div className="flex-1 flex flex-col justify-start">
+   926:                         <h5 className="text-[#002966] font-bold text-sm uppercase tracking-widest mb-2">Reality</h5>
+   927:                         <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+
+=== Line 924 ===
+   919:                 <div className="flex gap-6 md:gap-8 px-3 md:px-4 w-max">
+   920:                   {mythsData.map((myth, index) => (
+   921:                     <div key={`orig-${index}`} className="w-[85vw] sm:w-[350px] md:w-[400px] h-full bg-white p-8 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col hover:-translate-y-2 active:-translate-y-2 transition-transform duration-300 group shrink-0">
+   922:                       <div className="text-gray-200 font-extrabold text-5xl mb-4 group-hover:text-[#9c080a]/20 group-active:text-[#9c080a]/20 transition-colors">{myth.num}</div>
+   923:                       <h4 className="text-xl font-bold text-[#9c080a] mb-4 italic leading-snug min-h-[3.5rem] sm:min-h-[4rem] flex items-start">"{myth.title}"</h4>
+=> 924:                       <div className="w-12 h-1 bg-gray-100 mb-4 group-hover:bg-[#002966] group-active:bg-[#002966] transition-colors shrink-0"></div>
+   925:                       <div className="flex-1 flex flex-col justify-start">
+   926:                         <h5 className="text-[#002966] font-bold text-sm uppercase tracking-widest mb-2">Reality</h5>
+   927:                         <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+   928:                           {myth.reality}
+   929:                         </p>
+
+=== Line 937 ===
+   932:                   ))}
+   933:                 </div>
+   934:                 {/* Duplicated Set for Infinite Loop */}
+   935:                 <div className="flex gap-6 md:gap-8 px-3 md:px-4 w-max">
+   936:                   {mythsData.map((myth, index) => (
+=> 937:                     <div key={`dup-${index}`} className="w-[85vw] sm:w-[350px] md:w-[400px] h-full bg-white p-8 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col hover:-translate-y-2 active:-translate-y-2 transition-transform duration-300 group shrink-0">
+   938:                       <div className="text-gray-200 font-extrabold text-5xl mb-4 group-hover:text-[#9c080a]/20 group-active:text-[#9c080a]/20 transition-colors">{myth.num}</div>
+   939:                       <h4 className="text-xl font-bold text-[#9c080a] mb-4 italic leading-snug min-h-[3.5rem] sm:min-h-[4rem] flex items-start">"{myth.title}"</h4>
+   940:                       <div className="w-12 h-1 bg-gray-100 mb-4 group-hover:bg-[#002966] group-active:bg-[#002966] transition-colors shrink-0"></div>
+   941:                       <div className="flex-1 flex flex-col justify-start">
+   942:                         <h5 className="text-[#002966] font-bold text-sm uppercase tracking-widest mb-2">Reality</h5>
+
+=== Line 938 ===
+   933:                 </div>
+   934:                 {/* Duplicated Set for Infinite Loop */}
+   935:                 <div className="flex gap-6 md:gap-8 px-3 md:px-4 w-max">
+   936:                   {mythsData.map((myth, index) => (
+   937:                     <div key={`dup-${index}`} className="w-[85vw] sm:w-[350px] md:w-[400px] h-full bg-white p-8 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col hover:-translate-y-2 active:-translate-y-2 transition-transform duration-300 group shrink-0">
+=> 938:                       <div className="text-gray-200 font-extrabold text-5xl mb-4 group-hover:text-[#9c080a]/20 group-active:text-[#9c080a]/20 transition-colors">{myth.num}</div>
+   939:                       <h4 className="text-xl font-bold text-[#9c080a] mb-4 italic leading-snug min-h-[3.5rem] sm:min-h-[4rem] flex items-start">"{myth.title}"</h4>
+   940:                       <div className="w-12 h-1 bg-gray-100 mb-4 group-hover:bg-[#002966] group-active:bg-[#002966] transition-colors shrink-0"></div>
+   941:                       <div className="flex-1 flex flex-col justify-start">
+   942:                         <h5 className="text-[#002966] font-bold text-sm uppercase tracking-widest mb-2">Reality</h5>
+   943:                         <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+
+=== Line 940 ===
+   935:                 <div className="flex gap-6 md:gap-8 px-3 md:px-4 w-max">
+   936:                   {mythsData.map((myth, index) => (
+   937:                     <div key={`dup-${index}`} className="w-[85vw] sm:w-[350px] md:w-[400px] h-full bg-white p-8 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col hover:-translate-y-2 active:-translate-y-2 transition-transform duration-300 group shrink-0">
+   938:                       <div className="text-gray-200 font-extrabold text-5xl mb-4 group-hover:text-[#9c080a]/20 group-active:text-[#9c080a]/20 transition-colors">{myth.num}</div>
+   939:                       <h4 className="text-xl font-bold text-[#9c080a] mb-4 italic leading-snug min-h-[3.5rem] sm:min-h-[4rem] flex items-start">"{myth.title}"</h4>
+=> 940:                       <div className="w-12 h-1 bg-gray-100 mb-4 group-hover:bg-[#002966] group-active:bg-[#002966] transition-colors shrink-0"></div>
+   941:                       <div className="flex-1 flex flex-col justify-start">
+   942:                         <h5 className="text-[#002966] font-bold text-sm uppercase tracking-widest mb-2">Reality</h5>
+   943:                         <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+   944:                           {myth.reality}
+   945:                         </p>
+
+=== Line 1009 ===
+   1004:                       className="relative"
+   1005:                     >
+   1006:                       <div className="flex gap-4 md:gap-6 items-start py-4">
+   1007:                         <motion.div 
+   1008:                           variants={{
+=> 1009:                             inactive: {
+   1010:                               scale: 0.9,
+   1011:                               backgroundColor: "#f3f4f6",
+   1012:                               color: "#9ca3af",
+   1013:                               boxShadow: "0 0 0 0px rgba(0,0,0,0)"
+   1014:                             },
+
+=== Line 1015 ===
+   1010:                               scale: 0.9,
+   1011:                               backgroundColor: "#f3f4f6",
+   1012:                               color: "#9ca3af",
+   1013:                               boxShadow: "0 0 0 0px rgba(0,0,0,0)"
+   1014:                             },
+=> 1015:                             active: {
+   1016:                               scale: 1.05,
+   1017:                               backgroundColor: "#002966",
+   1018:                               color: "#ffffff",
+   1019:                               boxShadow: "0 10px 15px -3px rgba(0, 41, 102, 0.2)"
+   1020:                             }
+
+=== Line 1030 ===
+   1025:                           {item.num}
+   1026:                         </motion.div>
+   1027:                         <div className="flex-1 pb-4">
+   1028:                           <motion.h4 
+   1029:                             variants={{
+=> 1030:                               inactive: { color: "#9ca3af" },
+   1031:                               active: { color: "#002966" }
+   1032:                             }}
+   1033:                             transition={{ duration: 0.3 }}
+   1034:                             className="font-extrabold text-base md:text-lg mb-1"
+   1035:                           >
+
+=== Line 1031 ===
+   1026:                         </motion.div>
+   1027:                         <div className="flex-1 pb-4">
+   1028:                           <motion.h4 
+   1029:                             variants={{
+   1030:                               inactive: { color: "#9ca3af" },
+=> 1031:                               active: { color: "#002966" }
+   1032:                             }}
+   1033:                             transition={{ duration: 0.3 }}
+   1034:                             className="font-extrabold text-base md:text-lg mb-1"
+   1035:                           >
+   1036:                             {item.title}
+
+=== Line 1040 ===
+   1035:                           >
+   1036:                             {item.title}
+   1037:                           </motion.h4>
+   1038:                           <motion.p 
+   1039:                             variants={{
+=> 1040:                               inactive: { color: "#d1d5db" },
+   1041:                               active: { color: "#6b7280" }
+   1042:                             }}
+   1043:                             transition={{ duration: 0.3 }}
+   1044:                             className="text-sm"
+   1045:                           >
+
+=== Line 1041 ===
+   1036:                             {item.title}
+   1037:                           </motion.h4>
+   1038:                           <motion.p 
+   1039:                             variants={{
+   1040:                               inactive: { color: "#d1d5db" },
+=> 1041:                               active: { color: "#6b7280" }
+   1042:                             }}
+   1043:                             transition={{ duration: 0.3 }}
+   1044:                             className="text-sm"
+   1045:                           >
+   1046:                             {item.desc}
+
+=== Line 1098 ===
+   1093:                       className="relative"
+   1094:                     >
+   1095:                       <div className="flex gap-4 md:gap-6 items-start py-4">
+   1096:                         <motion.div 
+   1097:                           variants={{
+=> 1098:                             inactive: {
+   1099:                               scale: 0.9,
+   1100:                               backgroundColor: "#f3f4f6",
+   1101:                               color: "#9ca3af",
+   1102:                               boxShadow: "0 0 0 0px rgba(0,0,0,0)"
+   1103:                             },
+
+=== Line 1104 ===
+   1099:                               scale: 0.9,
+   1100:                               backgroundColor: "#f3f4f6",
+   1101:                               color: "#9ca3af",
+   1102:                               boxShadow: "0 0 0 0px rgba(0,0,0,0)"
+   1103:                             },
+=> 1104:                             active: {
+   1105:                               scale: 1.05,
+   1106:                               backgroundColor: "#002966",
+   1107:                               color: "#ffffff",
+   1108:                               boxShadow: "0 10px 15px -3px rgba(0, 41, 102, 0.2)"
+   1109:                             }
+
+=== Line 1119 ===
+   1114:                           {item.num}
+   1115:                         </motion.div>
+   1116:                         <div className="flex-1 pb-4">
+   1117:                           <motion.h4 
+   1118:                             variants={{
+=> 1119:                               inactive: { color: "#9ca3af" },
+   1120:                               active: { color: "#002966" }
+   1121:                             }}
+   1122:                             transition={{ duration: 0.3 }}
+   1123:                             className="font-extrabold text-base md:text-lg mb-1"
+   1124:                           >
+
+=== Line 1120 ===
+   1115:                         </motion.div>
+   1116:                         <div className="flex-1 pb-4">
+   1117:                           <motion.h4 
+   1118:                             variants={{
+   1119:                               inactive: { color: "#9ca3af" },
+=> 1120:                               active: { color: "#002966" }
+   1121:                             }}
+   1122:                             transition={{ duration: 0.3 }}
+   1123:                             className="font-extrabold text-base md:text-lg mb-1"
+   1124:                           >
+   1125:                             {item.title}
+
+=== Line 1129 ===
+   1124:                           >
+   1125:                             {item.title}
+   1126:                           </motion.h4>
+   1127:                           <motion.p 
+   1128:                             variants={{
+=> 1129:                               inactive: { color: "#d1d5db" },
+   1130:                               active: { color: "#6b7280" }
+   1131:                             }}
+   1132:                             transition={{ duration: 0.3 }}
+   1133:                             className="text-sm"
+   1134:                           >
+
+=== Line 1130 ===
+   1125:                             {item.title}
+   1126:                           </motion.h4>
+   1127:                           <motion.p 
+   1128:                             variants={{
+   1129:                               inactive: { color: "#d1d5db" },
+=> 1130:                               active: { color: "#6b7280" }
+   1131:                             }}
+   1132:                             transition={{ duration: 0.3 }}
+   1133:                             className="text-sm"
+   1134:                           >
+   1135:                             {item.desc}
+
+=== Line 1229 ===
+   1224:                     <>You cannot afford <span className="font-bold text-[#002966]">wasting time</span> and 2nd attempt exam fee.</>,
+   1225:                     <>You prefer <span className="font-bold text-[#002966]">structured guidance</span> over guesswork.</>,
+   1226:                     <>You need <span className="font-bold text-[#002966]">high accountability</span> & motivation.</>,
+   1227:                     <>You’ve taken the <span className="font-bold text-[#002966]">IELTS before</span> and want a <span className="font-bold text-[#002966]">stronger score</span>.</>
+   1228:                   ].map((item, index) => (
+=> 1229:                     <div key={index} className="flex gap-4 p-4 md:p-5 border-b border-gray-100 last:border-0 hover:bg-gray-50 active:bg-gray-50 transition-colors">
+   1230:                       <div className="bg-green-50 text-green-600 p-1 rounded-full h-fit shrink-0 mt-0.5 border border-green-100">
+   1231:                         <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+   1232:                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
+   1233:                         </svg>
+   1234:                       </div>
+
+=== Line 1262 ===
+   1257:                   {[
+   1258:                     <>You need <span className="font-bold text-[#9c080a]">shortcuts</span> instead of clarity.</>,
+   1259:                     <>You need a <span className="font-bold text-[#9c080a]">last-minute crash course</span> rather than proper preparation.</>,
+   1260:                     <>You need to book your <span className="font-bold text-[#9c080a]">test immediately</span>, with no time to prepare properly.</>
+   1261:                   ].map((item, index) => (
+=> 1262:                     <div key={index} className="flex gap-4 p-4 md:p-5 border-b border-gray-100 last:border-0 hover:bg-gray-50 active:bg-gray-50 transition-colors">
+   1263:                       <div className="bg-red-50 text-[#9c080a] p-1 rounded-full h-fit shrink-0 mt-0.5 border border-red-100">
+   1264:                         <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+   1265:                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M6 18L18 6M6 6l12 12"></path>
+   1266:                         </svg>
+   1267:                       </div>
+
+=== Line 1376 ===
+   1371:               <Carousel>
+   1372:                 {galleryImages.map((img, index) => (
+   1373:                   <div 
+   1374:                     key={index} 
+   1375:                     onClick={() => setActivePhotoIndex(index)}
+=> 1376:                     className="h-[180px] sm:h-[220px] md:h-[260px] lg:h-[300px] aspect-[4/3] shrink-0 bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden transform transition-all duration-300 hover:-translate-y-2 active:-translate-y-2 hover:shadow-xl active:shadow-xl snap-start relative flex items-center justify-center cursor-pointer group/card"
+   1377:                   >
+   1378:                     {/* Blurred background image for premium aesthetic fill */}
+   1379:                     <img
+   1380:                       src={img.src}
+   1381:                       alt=""
+
+=== Line 1389 ===
+   1384:                     {/* Main fully visible image */}
+   1385:                     <div className="absolute inset-0 flex items-center justify-center p-2 z-10">
+   1386:                       <img
+   1387:                         src={img.src}
+   1388:                         alt={`Gallery image ${index + 1}`}
+=> 1389:                         className="max-w-full max-h-full object-contain rounded-lg transition-transform duration-300 group-hover/card:scale-[1.03] group-active/card:scale-[1.03]"
+   1390:                       />
+   1391:                     </div>
+   1392:                   </div>
+   1393:                 ))}
+   1394:               </Carousel>
+
+=== Line 1466 ===
+   1461:               viewport={{ once: true }}
+   1462:               className="w-full relative mt-8"
+   1463:             >
+   1464:               <Carousel>
+   1465:                 {testimonialsData.map((testimonial, index) => (
+=> 1466:                   <div key={index} className="w-[85vw] sm:w-[480px] md:w-[600px] shrink-0 bg-white border border-gray-100 rounded-[2rem] overflow-hidden flex flex-col md:flex-row shadow-xl hover:-translate-y-2 active:-translate-y-2 transition-all duration-300 snap-start">
+   1467: 
+   1468:                     {/* Text Content */}
+   1469:                     <div className="flex-1 p-8 flex flex-col text-left relative">
+   1470:                       <div className="absolute top-6 right-6 opacity-[0.03]">
+   1471:                         <svg className="w-20 h-20 text-[#002966]" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+
+=== Line 1565 ===
+   1560:               </div>
+   1561: 
+   1562:               {/* Table Rows */}
+   1563:               <div className="divide-y divide-blue-50">
+   1564:                 {comparisonData.map((row, idx) => (
+=> 1565:                   <div key={idx} className="grid grid-cols-[1fr_1.3fr_1.6fr] hover:bg-gray-50/50 active:bg-gray-50/50 transition-colors">
+   1566:                     <div className="p-5 flex items-center text-[#002966] font-semibold text-[15px] whitespace-nowrap">
+   1567:                       {row.feature}
+   1568:                     </div>
+   1569:                     <div className="p-5 flex items-center gap-3 text-gray-500 font-medium whitespace-nowrap border-x border-gray-50 text-[15px]">
+   1570:                       <span className="text-gray-300 font-bold shrink-0">⨯</span> {row.trad}
+
+=== Line 1655 ===
+   1650:                     key={tab.id}
+   1651:                     onClick={() => setCaptainTab(tab.id)}
+   1652:                     className={`relative px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 cursor-pointer ${
+   1653:                       captainTab === tab.id
+   1654:                         ? 'bg-[#002966] text-white shadow-md'
+=> 1655:                         : 'text-[#002966] hover:bg-blue-100/50 active:bg-blue-100/50'
+   1656:                     }`}
+   1657:                   >
+   1658:                     {tab.label}
+   1659:                   </button>
+   1660:                 ))}
+
+=== Line 1773 ===
+   1768:                     </p>
+   1769:                   </div>
+   1770:                   {/* Certificates Row */}
+   1771:                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+   1772:                     {/* Cert 1 */}
+=> 1773:                     <div className="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg active:shadow-lg transition-shadow group flex flex-col">
+   1774:                       <div className="w-full bg-gray-50/50 flex items-center justify-center overflow-hidden h-40 sm:h-48 p-4">
+   1775:                         <img src={certIelts} alt="IELTS Certificate" className="w-full h-full object-contain group-hover:scale-[1.03] group-active:scale-[1.03] transition-transform duration-500" />
+   1776:                       </div>
+   1777:                       <div className="p-4 sm:p-6 flex-1 flex flex-col justify-center border-t border-gray-50 text-left">
+   1778:                         <div className="font-extrabold text-[#002966] text-base sm:text-lg mb-0.5">How to Teach IELTS</div>
+
+=== Line 1775 ===
+   1770:                   {/* Certificates Row */}
+   1771:                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+   1772:                     {/* Cert 1 */}
+   1773:                     <div className="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg active:shadow-lg transition-shadow group flex flex-col">
+   1774:                       <div className="w-full bg-gray-50/50 flex items-center justify-center overflow-hidden h-40 sm:h-48 p-4">
+=> 1775:                         <img src={certIelts} alt="IELTS Certificate" className="w-full h-full object-contain group-hover:scale-[1.03] group-active:scale-[1.03] transition-transform duration-500" />
+   1776:                       </div>
+   1777:                       <div className="p-4 sm:p-6 flex-1 flex flex-col justify-center border-t border-gray-50 text-left">
+   1778:                         <div className="font-extrabold text-[#002966] text-base sm:text-lg mb-0.5">How to Teach IELTS</div>
+   1779:                         <div className="text-xs sm:text-sm text-red-500 font-medium">Cambridge English / IDP</div>
+   1780:                       </div>
+
+=== Line 1784 ===
+   1779:                         <div className="text-xs sm:text-sm text-red-500 font-medium">Cambridge English / IDP</div>
+   1780:                       </div>
+   1781:                     </div>
+   1782: 
+   1783:                     {/* Cert 2 */}
+=> 1784:                     <div className="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg active:shadow-lg transition-shadow group flex flex-col">
+   1785:                       <div className="w-full bg-gray-50/50 flex items-center justify-center overflow-hidden h-40 sm:h-48 p-4">
+   1786:                         <img src={certPte} alt="PTE Certificate" className="w-full h-full object-contain group-hover:scale-[1.03] group-active:scale-[1.03] transition-transform duration-500" />
+   1787:                       </div>
+   1788:                       <div className="p-4 sm:p-6 flex-1 flex flex-col justify-center border-t border-gray-50 text-left">
+   1789:                         <div className="font-extrabold text-[#002966] text-base sm:text-lg mb-0.5">PTE Academic Certified</div>
+
+=== Line 1786 ===
+   1781:                     </div>
+   1782: 
+   1783:                     {/* Cert 2 */}
+   1784:                     <div className="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg active:shadow-lg transition-shadow group flex flex-col">
+   1785:                       <div className="w-full bg-gray-50/50 flex items-center justify-center overflow-hidden h-40 sm:h-48 p-4">
+=> 1786:                         <img src={certPte} alt="PTE Certificate" className="w-full h-full object-contain group-hover:scale-[1.03] group-active:scale-[1.03] transition-transform duration-500" />
+   1787:                       </div>
+   1788:                       <div className="p-4 sm:p-6 flex-1 flex flex-col justify-center border-t border-gray-50 text-left">
+   1789:                         <div className="font-extrabold text-[#002966] text-base sm:text-lg mb-0.5">PTE Academic Certified</div>
+   1790:                         <div className="text-xs sm:text-sm text-red-500 font-medium">Pearson Pathways</div>
+   1791:                       </div>
+
+=== Line 1795 ===
+   1790:                         <div className="text-xs sm:text-sm text-red-500 font-medium">Pearson Pathways</div>
+   1791:                       </div>
+   1792:                     </div>
+   1793: 
+   1794:                     {/* Cert 3 */}
+=> 1795:                     <div className="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg active:shadow-lg transition-shadow group flex flex-col">
+   1796:                       <div className="w-full bg-gray-50/50 flex items-center justify-center overflow-hidden h-40 sm:h-48 p-4">
+   1797:                         <img src={certPreply} alt="Preply Certificate" className="w-full h-full object-contain group-hover:scale-[1.03] group-active:scale-[1.03] transition-transform duration-500" />
+   1798:                       </div>
+   1799:                       <div className="p-4 sm:p-6 flex-1 flex flex-col justify-center border-t border-gray-50 text-left">
+   1800:                         <div className="font-extrabold text-[#002966] text-base sm:text-lg mb-0.5">Language Teaching Certificate</div>
+
+=== Line 1797 ===
+   1792:                     </div>
+   1793: 
+   1794:                     {/* Cert 3 */}
+   1795:                     <div className="bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm hover:shadow-lg active:shadow-lg transition-shadow group flex flex-col">
+   1796:                       <div className="w-full bg-gray-50/50 flex items-center justify-center overflow-hidden h-40 sm:h-48 p-4">
+=> 1797:                         <img src={certPreply} alt="Preply Certificate" className="w-full h-full object-contain group-hover:scale-[1.03] group-active:scale-[1.03] transition-transform duration-500" />
+   1798:                       </div>
+   1799:                       <div className="p-4 sm:p-6 flex-1 flex flex-col justify-center border-t border-gray-50 text-left">
+   1800:                         <div className="font-extrabold text-[#002966] text-base sm:text-lg mb-0.5">Language Teaching Certificate</div>
+   1801:                         <div className="text-xs sm:text-sm text-red-500 font-medium">Trinity</div>
+   1802:                       </div>
+
+=== Line 1826 ===
+   1821:                   </div>
+   1822:                   {/* WhatsApp Slider */}
+   1823:                   <div className="w-full relative py-2 max-w-5xl mx-auto">
+   1824:                     <Carousel>
+   1825:                       {whatsappTestimonials.map((item, idx) => (
+=> 1826:                         <div key={idx} className="w-[260px] sm:w-[300px] md:w-[340px] shrink-0 bg-white border border-gray-100 rounded-3xl overflow-hidden flex flex-col shadow-lg hover:-translate-y-1 active:-translate-y-1 transition-transform duration-300 snap-start">
+   1827:                            {/* Header with DP */}
+   1828:                            <div className="p-3 sm:p-4 bg-[#f2f7fc] border-b border-gray-100 flex items-center gap-3 text-left">
+   1829:                              <img src={item.dp} alt={item.name} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover shadow-xs border-2 border-white bg-white" />
+   1830:                              <div className="flex flex-col">
+   1831:                                <h4 className="font-bold text-[#002966] text-sm sm:text-base leading-tight">{item.name}</h4>
+
+=== Line 1890 ===
+   1885:               initial="hidden"
+   1886:               whileInView="show"
+   1887:               viewport={{ once: true }}
+   1888:               className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10"
+   1889:             >
+=> 1890:               <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center hover:shadow-md active:shadow-md transition-shadow">
+   1891:                 <div className="text-3xl md:text-4xl font-extrabold text-[#002966] mb-1 flex items-baseline justify-center">
+   1892:                   4–<AnimatedCounter end={6} />
+   1893:                   <span className="text-xl md:text-2xl font-bold ml-0.5">wks</span>
+   1894:                 </div>
+   1895:                 <div className="text-xs md:text-sm text-gray-500 font-medium">Focused preparation<br />timeline</div>
+
+=== Line 1897 ===
+   1892:                   4–<AnimatedCounter end={6} />
+   1893:                   <span className="text-xl md:text-2xl font-bold ml-0.5">wks</span>
+   1894:                 </div>
+   1895:                 <div className="text-xs md:text-sm text-gray-500 font-medium">Focused preparation<br />timeline</div>
+   1896:               </div>
+=> 1897:               <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center hover:shadow-md active:shadow-md transition-shadow">
+   1898:                 <div className="text-3xl md:text-4xl font-extrabold text-[#002966] mb-1">
+   1899:                   <AnimatedCounter end={20} suffix="+" />
+   1900:                 </div>
+   1901:                 <div className="text-xs md:text-sm text-gray-500 font-medium">Hours of live training</div>
+   1902:               </div>
+
+=== Line 1903 ===
+   1898:                 <div className="text-3xl md:text-4xl font-extrabold text-[#002966] mb-1">
+   1899:                   <AnimatedCounter end={20} suffix="+" />
+   1900:                 </div>
+   1901:                 <div className="text-xs md:text-sm text-gray-500 font-medium">Hours of live training</div>
+   1902:               </div>
+=> 1903:               <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center hover:shadow-md active:shadow-md transition-shadow">
+   1904:                 <div className="text-3xl md:text-4xl font-extrabold text-[#002966] mb-1">
+   1905:                   <AnimatedCounter end={50} />
+   1906:                 </div>
+   1907:                 <div className="text-xs md:text-sm text-gray-500 font-medium">Full exam simulations</div>
+   1908:               </div>
+
+=== Line 1909 ===
+   1904:                 <div className="text-3xl md:text-4xl font-extrabold text-[#002966] mb-1">
+   1905:                   <AnimatedCounter end={50} />
+   1906:                 </div>
+   1907:                 <div className="text-xs md:text-sm text-gray-500 font-medium">Full exam simulations</div>
+   1908:               </div>
+=> 1909:               <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center hover:shadow-md active:shadow-md transition-shadow">
+   1910:                 <div className="text-3xl md:text-4xl font-extrabold text-[#002966] mb-1 flex items-baseline justify-center">
+   1911:                   <AnimatedCounter end={3} />
+   1912:                   <span className="text-xl md:text-2xl font-bold ml-0.5">mo</span>
+   1913:                 </div>
+   1914:                 <div className="text-xs md:text-sm text-gray-500 font-medium">Full course access</div>
+
+=== Line 2013 ===
+   2008:               {/* Beyond the Classroom */}
+   2009:               <div className="bg-gray-50/50 p-6 md:p-8 border-t border-gray-100">
+   2010:                 <h4 className="text-[#9c080a] font-bold text-xs uppercase tracking-widest mb-6">Beyond The Classroom</h4>
+   2011:                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+   2012: 
+=> 2013:                   <div className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md active:shadow-md transition-shadow">
+   2014:                     <svg className="w-5 h-5 text-[#25D366] shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+   2015:                     <span className="font-bold text-[#002966] text-sm md:text-base">24/7 WhatsApp Support</span>
+   2016:                   </div>
+   2017: 
+   2018:                   <div className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md active:shadow-md transition-shadow">
+
+=== Line 2018 ===
+   2013:                   <div className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md active:shadow-md transition-shadow">
+   2014:                     <svg className="w-5 h-5 text-[#25D366] shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+   2015:                     <span className="font-bold text-[#002966] text-sm md:text-base">24/7 WhatsApp Support</span>
+   2016:                   </div>
+   2017: 
+=> 2018:                   <div className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md active:shadow-md transition-shadow">
+   2019:                     <svg className="w-5 h-5 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+   2020:                     <span className="font-bold text-[#002966] text-sm md:text-base">Personalised Study Plan</span>
+   2021:                   </div>
+   2022: 
+   2023:                   <div className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md active:shadow-md transition-shadow">
+
+=== Line 2023 ===
+   2018:                   <div className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md active:shadow-md transition-shadow">
+   2019:                     <svg className="w-5 h-5 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+   2020:                     <span className="font-bold text-[#002966] text-sm md:text-base">Personalised Study Plan</span>
+   2021:                   </div>
+   2022: 
+=> 2023:                   <div className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md active:shadow-md transition-shadow">
+   2024:                     <svg className="w-5 h-5 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" /></svg>
+   2025:                     <span className="font-bold text-[#002966] text-sm md:text-base">Step-by-Step Digital Notes</span>
+   2026:                   </div>
+   2027: 
+   2028:                   <div className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md active:shadow-md transition-shadow">
+
+=== Line 2028 ===
+   2023:                   <div className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md active:shadow-md transition-shadow">
+   2024:                     <svg className="w-5 h-5 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" /></svg>
+   2025:                     <span className="font-bold text-[#002966] text-sm md:text-base">Step-by-Step Digital Notes</span>
+   2026:                   </div>
+   2027: 
+=> 2028:                   <div className="bg-white border border-gray-100 p-4 rounded-xl flex items-center gap-3 shadow-sm hover:shadow-md active:shadow-md transition-shadow">
+   2029:                     <svg className="w-5 h-5 text-[#002966] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+   2030:                     <span className="font-bold text-[#002966] text-sm md:text-base">Exam Registration Support</span>
+   2031:                   </div>
+   2032: 
+   2033:                 </div>
+
+=== Line 2055 ===
+   2050:                     May Intake Special Price
+   2051:                   </div>
+   2052:                 </div>
+   2053: 
+   2054:                 <div className="flex flex-col items-center md:items-end gap-3 w-full md:w-auto">
+=> 2055:                   <a href="https://wa.link/vk9h0d" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto bg-[#25D366] hover:bg-[#25D366] active:bg-[#25D366] hover:brightness-105 active:brightness-95 text-white px-8 py-4 rounded-xl font-bold md:text-lg shadow-lg hover:shadow-xl active:shadow-xl hover:-translate-y-1 active:-translate-y-1 transition-all flex items-center justify-center gap-3">
+   2056:                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+   2057:                     Start My Preparation
+   2058:                   </a>
+   2059:                   <div className="text-xs text-gray-500 font-medium flex items-center justify-center md:justify-end gap-1.5 w-full">
+   2060:                     <svg className="w-3.5 h-3.5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+
+=== Line 2102 ===
+   2097:                 whileInView="show"
+   2098:                 viewport={{ once: true }}
+   2099:                 className="grid grid-cols-1 md:grid-cols-3 gap-6"
+   2100:               >
+   2101:               {/* Card 1: Guaranteed */}
+=> 2102:               <div className="border border-[#002966] rounded-xl p-8 flex flex-col items-center text-center bg-white shadow-sm hover:shadow-md active:shadow-md transition-all hover:-translate-y-1 active:-translate-y-1">
+   2103:                 <svg className="w-10 h-10 text-[#002966] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+   2104:                 <div className="text-[10px] sm:text-xs font-bold text-[#002966] tracking-widest uppercase mb-4">Guaranteed</div>
+   2105:                 <h3 className="text-lg sm:text-xl font-bold text-[#002966] mb-3">Pay once, continue until ready</h3>
+   2106:                 <p className="text-sm text-gray-500 leading-relaxed px-2">Continue learning with us if you haven't reached your target.</p>
+   2107:               </div>
+
+=== Line 2110 ===
+   2105:                 <h3 className="text-lg sm:text-xl font-bold text-[#002966] mb-3">Pay once, continue until ready</h3>
+   2106:                 <p className="text-sm text-gray-500 leading-relaxed px-2">Continue learning with us if you haven't reached your target.</p>
+   2107:               </div>
+   2108: 
+   2109:               {/* Card 2: Zero Risk */}
+=> 2110:               <div className="border border-[#002966] rounded-xl p-8 flex flex-col items-center text-center bg-white shadow-sm hover:shadow-md active:shadow-md transition-all hover:-translate-y-1 active:-translate-y-1">
+   2111:                 <svg className="w-10 h-10 text-[#002966] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+   2112:                 <div className="text-[10px] sm:text-xs font-bold text-[#002966] tracking-widest uppercase mb-4">Zero Risk</div>
+   2113:                 <h3 className="text-lg sm:text-xl font-bold text-[#002966] mb-3">Risk-free start</h3>
+   2114:                 <p className="text-sm text-gray-500 leading-relaxed px-2">Try the first week — full refund if it doesn't meet your expectations.</p>
+   2115:               </div>
+
+=== Line 2118 ===
+   2113:                 <h3 className="text-lg sm:text-xl font-bold text-[#002966] mb-3">Risk-free start</h3>
+   2114:                 <p className="text-sm text-gray-500 leading-relaxed px-2">Try the first week — full refund if it doesn't meet your expectations.</p>
+   2115:               </div>
+   2116: 
+   2117:               {/* Card 3: Exclusive */}
+=> 2118:               <div className="border border-[#9c080a] rounded-xl p-8 flex flex-col items-center text-center bg-white shadow-sm hover:shadow-md active:shadow-md transition-all hover:-translate-y-1 active:-translate-y-1 relative overflow-hidden">
+   2119:                 <svg className="w-10 h-10 text-[#002966] mb-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+   2120:                 <div className="text-[10px] sm:text-xs font-bold text-[#002966] tracking-widest uppercase mb-4">Exclusive</div>
+   2121:                 <h3 className="text-lg sm:text-xl font-bold text-[#002966] mb-3">High performance reward</h3>
+   2122:                 <p className="text-sm text-gray-500 leading-relaxed px-2">Students achieving Band 7+ are eligible for a high performance reward as recognition of their achievement.</p>
+   2123:               </div>
+
+=== Line 2153 ===
+   2148:               whileInView="show"
+   2149:               viewport={{ once: true }}
+   2150:               className="grid grid-cols-1 md:grid-cols-2 gap-6"
+   2151:             >
+   2152:               {/* Card 4 */}
+=> 2153:               <div className="border border-[#002966] rounded-xl p-6 md:p-8 flex flex-col items-center text-center bg-white shadow-sm hover:shadow-md active:shadow-md transition-shadow">
+   2154:                 <h3 className="text-lg md:text-xl font-bold text-[#002966] mb-2">No time pressure</h3>
+   2155:                 <p className="text-sm text-gray-500">Learn at your own pace without rushing through the material</p>
+   2156:               </div>
+   2157: 
+   2158:               {/* Card 5 */}
+
+=== Line 2159 ===
+   2154:                 <h3 className="text-lg md:text-xl font-bold text-[#002966] mb-2">No time pressure</h3>
+   2155:                 <p className="text-sm text-gray-500">Learn at your own pace without rushing through the material</p>
+   2156:               </div>
+   2157: 
+   2158:               {/* Card 5 */}
+=> 2159:               <div className="border border-[#002966] rounded-xl p-6 md:p-8 flex flex-col items-center text-center bg-white shadow-sm hover:shadow-md active:shadow-md transition-shadow">
+   2160:                 <h3 className="text-lg md:text-xl font-bold text-[#002966] mb-2">You only do this once</h3>
+   2161:                 <p className="text-sm text-gray-500">Get it right the first time with our comprehensive approach</p>
+   2162:               </div>
+   2163:             </motion.div>
+   2164: 
+
+=== Line 2173 ===
+   2168:               initial="hidden"
+   2169:               whileInView="show"
+   2170:               viewport={{ once: true }}
+   2171:               className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8"
+   2172:             >
+=> 2173:               <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg active:shadow-lg transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 bg-white p-2">
+   2174:                 <img src={commitmentImg1} alt="Mindful Commitment Proof 1" className="w-full h-auto rounded-xl object-contain" />
+   2175:               </div>
+   2176:               <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg active:shadow-lg transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 bg-white p-2">
+   2177:                 <img src={commitmentImg2} alt="Mindful Commitment Proof 2" className="w-full h-auto rounded-xl object-contain" />
+   2178:               </div>
+
+=== Line 2176 ===
+   2171:               className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8"
+   2172:             >
+   2173:               <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg active:shadow-lg transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 bg-white p-2">
+   2174:                 <img src={commitmentImg1} alt="Mindful Commitment Proof 1" className="w-full h-auto rounded-xl object-contain" />
+   2175:               </div>
+=> 2176:               <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg active:shadow-lg transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 bg-white p-2">
+   2177:                 <img src={commitmentImg2} alt="Mindful Commitment Proof 2" className="w-full h-auto rounded-xl object-contain" />
+   2178:               </div>
+   2179:               <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg active:shadow-lg transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 bg-white p-2">
+   2180:                 <img src={commitmentImg3} alt="Mindful Commitment Proof 3" className="w-full h-auto rounded-xl object-contain" />
+   2181:               </div>
+
+=== Line 2179 ===
+   2174:                 <img src={commitmentImg1} alt="Mindful Commitment Proof 1" className="w-full h-auto rounded-xl object-contain" />
+   2175:               </div>
+   2176:               <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg active:shadow-lg transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 bg-white p-2">
+   2177:                 <img src={commitmentImg2} alt="Mindful Commitment Proof 2" className="w-full h-auto rounded-xl object-contain" />
+   2178:               </div>
+=> 2179:               <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg active:shadow-lg transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 bg-white p-2">
+   2180:                 <img src={commitmentImg3} alt="Mindful Commitment Proof 3" className="w-full h-auto rounded-xl object-contain" />
+   2181:               </div>
+   2182:             </motion.div>
+   2183:           </div>
+   2184:         </div>
+
+=== Line 2255 ===
+   2250:                 {
+   2251:                   q: "When does the next batch start?",
+   2252:                   a: "Batches are limited in size to keep the coaching quality high. Message us on WhatsApp and we'll tell you the exact start date and how many seats are left. Spots fill up — it's worth checking early."
+   2253:                 }
+   2254:               ].map((faq, idx) => (
+=> 2255:                 <details key={idx} className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md active:shadow-md transition-shadow overflow-hidden">
+   2256:                   <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-[#002966] text-lg hover:text-[#9c080a] active:text-[#9c080a] transition-colors">
+   2257:                     <span>{faq.q}</span>
+   2258:                     <span className="transition group-open:rotate-180 text-gray-400 group-hover:text-[#9c080a] group-active:text-[#9c080a]">
+   2259:                       <svg fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9" /></svg>
+   2260:                     </span>
+
+=== Line 2256 ===
+   2251:                   q: "When does the next batch start?",
+   2252:                   a: "Batches are limited in size to keep the coaching quality high. Message us on WhatsApp and we'll tell you the exact start date and how many seats are left. Spots fill up — it's worth checking early."
+   2253:                 }
+   2254:               ].map((faq, idx) => (
+   2255:                 <details key={idx} className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md active:shadow-md transition-shadow overflow-hidden">
+=> 2256:                   <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-[#002966] text-lg hover:text-[#9c080a] active:text-[#9c080a] transition-colors">
+   2257:                     <span>{faq.q}</span>
+   2258:                     <span className="transition group-open:rotate-180 text-gray-400 group-hover:text-[#9c080a] group-active:text-[#9c080a]">
+   2259:                       <svg fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9" /></svg>
+   2260:                     </span>
+   2261:                   </summary>
+
+=== Line 2258 ===
+   2253:                 }
+   2254:               ].map((faq, idx) => (
+   2255:                 <details key={idx} className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md active:shadow-md transition-shadow overflow-hidden">
+   2256:                   <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-[#002966] text-lg hover:text-[#9c080a] active:text-[#9c080a] transition-colors">
+   2257:                     <span>{faq.q}</span>
+=> 2258:                     <span className="transition group-open:rotate-180 text-gray-400 group-hover:text-[#9c080a] group-active:text-[#9c080a]">
+   2259:                       <svg fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9" /></svg>
+   2260:                     </span>
+   2261:                   </summary>
+   2262:                   <div className="px-6 pb-6 text-gray-600 leading-relaxed group-open:animate-fadeIn">
+   2263:                     {faq.a}
+
+=== Line 2272 ===
+   2267:             </div>
+   2268: 
+   2269:             <div className="mt-16 text-center bg-blue-50/50 rounded-2xl p-8 border border-blue-100/50">
+   2270:               <h3 className="text-xl font-bold text-[#002966] mb-3">Still have questions?</h3>
+   2271:               <p className="text-gray-600 mb-6">Chat with our team directly. We usually reply within minutes.</p>
+=> 2272:               <a href="https://wa.link/vk9h0d" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#25D366] active:bg-[#25D366] hover:brightness-105 active:brightness-95 text-white px-8 py-3 rounded-full font-bold shadow-md hover:shadow-lg active:shadow-lg transition-all hover:-translate-y-0.5 active:-translate-y-0.5">
+   2273:                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+   2274:                 Ask on WhatsApp
+   2275:               </a>
+   2276:             </div>
+   2277:           </div>
+
+=== Line 2429 ===
+   2424:                       <label key={idx} className="flex items-start gap-3.5 cursor-pointer group">
+   2425:                         <div className="relative flex items-start mt-0.5">
+   2426:                           <input type="checkbox" className="peer appearance-none w-5 h-5 border-2 border-gray-300 rounded cursor-pointer checked:bg-[#002966] checked:border-[#002966] transition-colors" />
+   2427:                           <svg className="absolute w-3.5 h-3.5 text-white top-1 left-[3px] opacity-0 peer-checked:opacity-100 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+   2428:                         </div>
+=> 2429:                         <span className="text-sm font-medium text-gray-700 group-hover:text-[#002966] group-active:text-[#002966] transition-colors leading-snug">{option}</span>
+   2430:                       </label>
+   2431:                     ))}
+   2432:                   </div>
+   2433:                 </div>
+   2434: 
+
+=== Line 2436 ===
+   2431:                     ))}
+   2432:                   </div>
+   2433:                 </div>
+   2434: 
+   2435:                 <div className="pt-6">
+=> 2436:                   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="block text-center w-full bg-[#002966] hover:bg-[#001f4d] active:bg-[#001f4d] text-white font-bold py-4 rounded-xl shadow-md hover:shadow-lg active:shadow-lg transition-all hover:-translate-y-0.5 active:-translate-y-0.5 mb-6 text-lg">
+   2437:                     Start My Preparation
+   2438:                   </a>
+   2439: 
+   2440:                   <div className="flex flex-col items-center gap-3.5">
+   2441:                     <a href="https://wa.link/vk9h0d" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 text-[#002966] font-bold text-sm hover:text-[#25D366] active:text-[#25D366] transition-colors">
+
+=== Line 2441 ===
+   2436:                   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="block text-center w-full bg-[#002966] hover:bg-[#001f4d] active:bg-[#001f4d] text-white font-bold py-4 rounded-xl shadow-md hover:shadow-lg active:shadow-lg transition-all hover:-translate-y-0.5 active:-translate-y-0.5 mb-6 text-lg">
+   2437:                     Start My Preparation
+   2438:                   </a>
+   2439: 
+   2440:                   <div className="flex flex-col items-center gap-3.5">
+=> 2441:                     <a href="https://wa.link/vk9h0d" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 text-[#002966] font-bold text-sm hover:text-[#25D366] active:text-[#25D366] transition-colors">
+   2442:                       <svg className="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+   2443:                       Chat With a Real IELTS Coach
+   2444:                     </a>
+   2445:                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 text-[#002966] font-bold text-sm hover:text-[#9c080a] active:text-[#9c080a] transition-colors">
+   2446:                       <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+
+=== Line 2445 ===
+   2440:                   <div className="flex flex-col items-center gap-3.5">
+   2441:                     <a href="https://wa.link/vk9h0d" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 text-[#002966] font-bold text-sm hover:text-[#25D366] active:text-[#25D366] transition-colors">
+   2442:                       <svg className="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+   2443:                       Chat With a Real IELTS Coach
+   2444:                     </a>
+=> 2445:                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 text-[#002966] font-bold text-sm hover:text-[#9c080a] active:text-[#9c080a] transition-colors">
+   2446:                       <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+   2447:                         <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+   2448:                       </svg>
+   2449:                       Admissions@mindful.com.pk
+   2450:                     </a>
+
+=== Line 2503 ===
+   2498:               <div>
+   2499:                 <a 
+   2500:                   href="https://wa.link/vk9h0d"
+   2501:                   target="_blank"
+   2502:                   rel="noopener noreferrer"
+=> 2503:                   className="px-8 py-3.5 bg-[#fbf9f4] border border-[#e5e1d8] text-[#002966] font-extrabold text-sm md:text-base rounded-2xl shadow-sm hover:shadow-md active:shadow-md hover:bg-white active:bg-white active:scale-95 transition-all inline-flex items-center justify-center gap-2 cursor-pointer"
+   2504:                 >
+   2505:                   Join Mindful — Enroll Now
+   2506:                 </a>
+   2507:               </div>
+   2508:             </motion.div>
+
+=== Line 2553 ===
+   2548:               "First attempt",
+   2549:               "No retakes",
+   2550:               "No wasted money",
+   2551:               "Real confidence"
+   2552:             ].map((text, idx) => (
+=> 2553:               <span key={idx} className="border border-blue-400/30 text-blue-100 px-4 sm:px-5 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold hover:border-blue-400 active:border-blue-400 hover:text-white active:text-white transition-colors cursor-default whitespace-nowrap">
+   2554:                 {text}
+   2555:               </span>
+   2556:             ))}
+   2557:           </motion.div>
+   2558: 
+
+=== Line 2560 ===
+   2555:               </span>
+   2556:             ))}
+   2557:           </motion.div>
+   2558: 
+   2559:           {/* CTA Button */}
+=> 2560:           <motion.a variants={fadeUp} href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 bg-white text-[#002966] hover:bg-gray-50 active:bg-gray-50 px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-xl hover:-translate-y-1 active:-translate-y-1 transition-all group min-w-[280px]">
+   2561:             Start your transformation
+   2562:             <span className="font-normal text-xl group-hover:translate-x-1 group-active:translate-x-1 transition-transform">&rarr;</span>
+   2563:           </motion.a>
+   2564:         </motion.div>
+   2565:       </footer>
+
+=== Line 2562 ===
+   2557:           </motion.div>
+   2558: 
+   2559:           {/* CTA Button */}
+   2560:           <motion.a variants={fadeUp} href="https://mail.google.com/mail/?view=cm&fs=1&to=Admissions@mindful.com.pk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 bg-white text-[#002966] hover:bg-gray-50 active:bg-gray-50 px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-xl hover:-translate-y-1 active:-translate-y-1 transition-all group min-w-[280px]">
+   2561:             Start your transformation
+=> 2562:             <span className="font-normal text-xl group-hover:translate-x-1 group-active:translate-x-1 transition-transform">&rarr;</span>
+   2563:           </motion.a>
+   2564:         </motion.div>
+   2565:       </footer>
+   2566: 
+   2567:       {/* Sticky Bottom Action Bar */}
+
+=== Line 2587 ===
+   2582:             {/* Right: Access This Course Button */}
+   2583:             <a 
+   2584:               href="https://wa.link/vk9h0d"
+   2585:               target="_blank"
+   2586:               rel="noopener noreferrer"
+=> 2587:               className="w-full sm:w-auto bg-[#9c080a] hover:bg-[#850709] active:bg-[#850709] text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full font-bold text-xs sm:text-sm md:text-base lg:text-lg tracking-wider shadow-md hover:scale-105 active:scale-95 transition-all whitespace-nowrap block text-center"
+   2588:             >
+   2589:               Access This Course
+   2590:             </a>
+   2591:           </motion.div>
+   2592:         )}
+
+=== Line 2617 ===
+   2612:             >
+   2613:               {/* Header / Close button */}
+   2614:               <div className="absolute top-4 right-4 z-10">
+   2615:                 <button
+   2616:                   onClick={() => setIsVideoModalOpen(false)}
+=> 2617:                   className="bg-black/50 hover:bg-[#9c080a] active:bg-[#9c080a] hover:scale-105 active:scale-95 text-white p-2 rounded-full transition-all cursor-pointer shadow-md"
+   2618:                   aria-label="Close modal"
+   2619:                 >
+   2620:                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+   2621:                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+   2622:                   </svg>
+
+=== Line 2660 ===
+   2655:           >
+   2656:             {/* Close Button */}
+   2657:             <div className="absolute top-4 right-4 z-50">
+   2658:               <button
+   2659:                 onClick={() => setActivePhotoIndex(null)}
+=> 2660:                 className="bg-black/50 hover:bg-[#9c080a] active:bg-[#9c080a] hover:scale-105 active:scale-95 text-white p-2.5 rounded-full transition-all cursor-pointer shadow-md"
+   2661:                 aria-label="Close lightbox"
+   2662:               >
+   2663:                 <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+   2664:                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+   2665:                 </svg>
+
+=== Line 2676 ===
+   2671:             <button
+   2672:               onClick={(e) => {
+   2673:                 e.stopPropagation();
+   2674:                 setActivePhotoIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+   2675:               }}
+=> 2676:               className="absolute left-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 active:bg-white/20 active:scale-95 flex items-center justify-center text-white transition-all cursor-pointer border border-white/10"
+   2677:               aria-label="Previous photo"
+   2678:             >
+   2679:               <svg className="w-6 h-6 stroke-current fill-none" viewBox="0 0 24 24" strokeWidth="2.5">
+   2680:                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+   2681:               </svg>
+
+=== Line 2690 ===
+   2685:             <button
+   2686:               onClick={(e) => {
+   2687:                 e.stopPropagation();
+   2688:                 setActivePhotoIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+   2689:               }}
+=> 2690:               className="absolute right-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 active:bg-white/20 active:scale-95 flex items-center justify-center text-white transition-all cursor-pointer border border-white/10"
+   2691:               aria-label="Next photo"
+   2692:             >
+   2693:               <svg className="w-6 h-6 stroke-current fill-none" viewBox="0 0 24 24" strokeWidth="2.5">
+   2694:                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+   2695:               </svg>
+
