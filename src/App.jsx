@@ -49,10 +49,10 @@ import imgGalleryyyyy from './assets/Gallery/galleryyyyyyyyyyyyyyyyy.png';
 import imgGlry3 from './assets/Gallery/new gallery 2.png';
 
 // Course Captain Images
-import captainImg from './assets/course captain/Course Captain.jpg';
-import certIelts from './assets/course captain/IELTS Certificate.png';
-import certPte from './assets/course captain/PTE certificate.png';
-import certPreply from './assets/course captain/Preply Certificate.png';
+import captainImg from './assets/Course Captain/Course Captain.jpg';
+import certIelts from './assets/Course Captain/IELTS Certificate.png';
+import certPte from './assets/Course Captain/PTE certificate.png';
+import certPreply from './assets/Course Captain/Preply Certificate.png';
 
 // Flag SVGs
 import flagPk from './assets/flags/pk.svg';
@@ -61,19 +61,19 @@ import flagAe from './assets/flags/ae.svg';
 import flagSa from './assets/flags/sa.svg';
 
 // WhatsApp Testimonials Images
-import ahsanDp from './assets/course captain/Ahsan Abdali (1).png';
-import ahsanWa from './assets/course captain/Ahsan Ali Testi.jpeg';
+import ahsanDp from './assets/Course Captain/Ahsan Abdali (1).png';
+import ahsanWa from './assets/Course Captain/Ahsan Ali Testi.jpeg';
 
-import jalilDp from './assets/course captain/Barristor Abdul Jalil.png';
-import jalilWa from './assets/course captain/Barristor Abdul Jalil testi.jpeg';
+import jalilDp from './assets/Course Captain/Barristor Abdul Jalil.png';
+import jalilWa from './assets/Course Captain/Barristor Abdul Jalil testi.jpeg';
 
-import zunairaDp from './assets/course captain/Dr. Zunaira.png';
-import zunairaWa from './assets/course captain/Dr zunaira testi.jpeg';
+import zunairaDp from './assets/Course Captain/Dr. Zunaira.png';
+import zunairaWa from './assets/Course Captain/Dr zunaira testi.jpeg';
 
-import yumnaDp from './assets/course captain/Yumna Shahid.png';
-import yumnaWa from './assets/course captain/Yumna testi.jpeg';
+import yumnaDp from './assets/Course Captain/Yumna Shahid.png';
+import yumnaWa from './assets/Course Captain/Yumna testi.jpeg';
 
-import murtazaWa from './assets/course captain/Murtaza Nizamani testi.png';
+import murtazaWa from './assets/Course Captain/Murtaza Nizamani testi.png';
 
 const murtazaDp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23002966;stop-opacity:1' /><stop offset='100%25' style='stop-color:%23001f4d;stop-opacity:1' /></linearGradient></defs><circle cx='50' cy='50' r='50' fill='url(%23grad)'/><text x='50%25' y='54%25' font-size='36' font-family='system-ui, -apple-system, sans-serif' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>MN</text></svg>";
 

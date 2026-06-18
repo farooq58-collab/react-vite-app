@@ -5,5 +5,5 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './react-vite-app', // Use relative paths for iframe compatibility
+  base: './', // Use relative paths for iframe compatibility
 })
